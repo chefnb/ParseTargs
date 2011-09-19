@@ -1,0 +1,61 @@
+
+ <table> <tr><td>SOLUBLE</td><td>INSOLUBLE</td></tr>
+ <tr> <td>
+ <table class="tdb_table">
+    <tr> <th>THMM filter:</th>  <th >cytoplasmic</th> <th >membrane</th> </tr>
+    <tr> 
+        <td> total identified </td>       
+             <td> {cytoplasmic[soluble][total]} </td>   <td> {membrane[soluble][total]} </td>
+     </tr>
+   <tr class="ext">  
+          <td> <b>Features</b>  </td>   
+    </tr>
+     <tr class="ext">  
+          <td> seq length &mu;,&sigma;  </td>   
+             <td> {cytoplasmic[soluble][length][mean]} &plusmn;{cytoplasmic[soluble][length][sd]:.0f} </td>    
+             <td> {membrane[soluble][length][mean]} &plusmn;{membrane[soluble][length][sd]:.0f} </td>
+      </tr>
+      <tr class="ext">  <td> DE count &mu;,&sigma; </td>    
+             <td> {cytoplasmic[soluble][de][mean]} &plusmn;{cytoplasmic[soluble][de][sd]:.0f} </td>
+             <td> {membrane[soluble][de][mean]} &plusmn;{membrane[soluble][de][sd]:.0f} </td>
+      </tr>
+      <tr class="ext">  <td>length-DE correl<sup>n</sup></td>   
+              <td> {cytoplasmic[soluble][Pearson_coeff]:.2f}</td>  
+              <td> {membrane[soluble][Pearson_coeff]:.2f}</td>  
+      </tr>
+   </table>
+ </td>
+  <td>
+
+  <table class="tdb_table">
+ 
+      <tr>  <th >cytoplasmic</th> <th >membrane</th> </tr>
+      
+      <tr>        
+        <td> {cytoplasmic[insoluble][total]} </td>   <td> {membrane[insoluble][total]} </td>
+      </tr>
+       <tr class="ext">    
+        <td> .. </td>    
+       </tr>
+      <tr class="ext">    
+        <td> {cytoplasmic[insoluble][length][mean]} &plusmn;{cytoplasmic[insoluble][length][sd]:.0f} </td>    
+        <td> {membrane[insoluble][length][mean]} &plusmn;{membrane[insoluble][length][sd]:.0f} </td>
+      </tr>
+      <tr class="ext">  
+        <td> {cytoplasmic[insoluble][de][mean]} &plusmn;{cytoplasmic[insoluble][de][sd]:.0f} </td>
+        <td> {membrane[insoluble][de][mean]} &plusmn;{membrane[insoluble][de][sd]:.0f} </td>
+      </tr>
+      <tr class="ext"> 
+        <td> {cytoplasmic[insoluble][Pearson_coeff]:.2f}</td>  
+        <td> {membrane[insoluble][Pearson_coeff]:.2f}</td>  
+      </tr>
+  
+   </table>
+ </td>
+<td style="vertical-align:bottom">
+
+<a  class="toggle" onclick="$('.ext').toggle();$('.toggle').toggle()">   &raquo; more   </a>
+<a  style="display:none" class="toggle" onclick="$('.ext').toggle();$('.toggle').toggle()">  &raquo; less   </a>
+</td>
+</tr>
+</table>

@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ParseTargs</title>
+<head>
+<meta name="author" content="Nick Braun" />
+<link href="style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript"   src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="barcharts.js"></script>
+<script type="text/javascript" src="barchart_data.js"></script>
+</head>
+
+<div id="header"></div>
+
+<body>
+
+<div id="main"><div id="content">
+ 
+<table style="padding-bottom:30px">
+  <tr> 
+    <td> <img id="logo" src="parseTargs.png"/> </td>
+    
+    <td>
+      <table width=140px; style="text-align:center"> 
+         <tr> <td>  <b> Download </b>  </td> </tr>
+         <tr> <td> sqlite version    </td> </tr>
+         <tr> <td> ({download_size:4.2f}&nbsp;Mb)    </td> </tr>
+         <tr> <td> <a href="/parseTargs/js/parseTargs.db"> <img src="/parseTargs/img/dl.png"></img></a>
+             </td> </tr>
+       </table>
+    </td>
+
+   <td>
+ParseTargs is a training dataset for use in recombinant solubility prediction. <br>It is updated regularly from its primary data source, the <em>TargetDB</em> project hosted at <a href="http://targetdb.sbkb.org/TargetDB/">http://targetdb.sbkb.org/TargetDB/</a>
+<p>
+<b>Contact</b> parsetargs@sharpitor.com  (Nick Braun)
+
+   </td>
+
+  </tr>
+</table>
+
+
+<a> <h2 onclick="$('#summary').toggle()">  &raquo; Last update summary</h2> </a>
+<div id="summary">
+  TargetDB downloaded {datestamp} &nbsp;&nbsp; Targets parsed: {total_parsed}<p>{summary}<p>
+</div>
+
+<!-- Barcharts -->
+
+<a><h2 onclick="$('#chartspace').toggle()">  &raquo; Features rendering </h2></a>
+
+<div style="display: inline" id="loading"> setting up...<img src="busy.gif"></img> </div>
+
+<div id ="chartspace">
+
+<script type="text/javascript">
+
+google.load("visualization", "1", {{packages:["corechart"]}});
+ 
+$(function(){{
+   
+            initCharts();  
+            $('#chartspace').show(); 
+            $('#loading').hide();
+            
+    }});
+
+</script>
+
+
+ <table cellpadding="10">
+    <tr>
+       <td>      
+          <select id="CorM" onchange="selectionUpdate()"> 
+	     <option>Cytoplasmic</option>
+	     <option>Membrane</option>            	    
+         </select>
+       </td>
+       <td>
+          <select id="LorDE" onchange="selectionUpdate()"> 
+	     <option>Length (aa)</option>
+	     <option>DE count (aa)</option>            
+         </select>
+       </td>
+       <td> binsize: </td> 
+       <td id="binsize"> </td>
+    </tr>
+</table>
+     
+   <div  id="chart"></div>
+  </div>
+</div></div>
+</body>
+
+<div id="footer">
+This service is maintained by <a href="http://sharpitor.com" style="color : #aaa; font-weight : bold"> Sharpitor MVC</a>
+</div>   
+</html>
+ 
