@@ -24,7 +24,7 @@
       <table width=140px; style="text-align:center"> 
          <tr> <td>  <b> Download </b>  </td> </tr>
          <tr> <td> sqlite version    </td> </tr>
-         <tr> <td> ({download_size:4.2f}&nbsp;Mb)    </td> </tr>
+         <tr> <td> (3.16&nbsp;Mb)    </td> </tr>
          <tr> <td> <a href="/parseTargs/js/parseTargs.db"> <img src="/parseTargs/img/dl.png"></img></a>
              </td> </tr>
        </table>
@@ -43,7 +43,68 @@ ParseTargs is a training dataset for use in recombinant solubility prediction. <
 
 <a> <h2 onclick="$('#summary').toggle()">  &raquo; Last update summary</h2> </a>
 <div id="summary">
-  TargetDB downloaded {datestamp} &nbsp;&nbsp; Targets parsed: {total_parsed}<p>{summary}<p>
+  TargetDB downloaded 2011-09-16 &nbsp;&nbsp; Targets parsed: 280863<p>
+ <table> <tr><td>SOLUBLE</td><td>INSOLUBLE</td></tr>
+ <tr> <td>
+ <table class="tdb_table">
+    <tr> <th>THMM filter:</th>  <th >cytoplasmic</th> <th >membrane</th> </tr>
+    <tr> 
+        <td> total identified </td>       
+             <td> 55482 </td>   <td> 4594 </td>
+     </tr>
+   <tr class="ext">  
+          <td> <b>Features</b>  </td>   
+    </tr>
+     <tr class="ext">  
+          <td> seq length &mu;,&sigma;  </td>   
+             <td> 269 &plusmn;191 </td>    
+             <td> 378 &plusmn;268 </td>
+      </tr>
+      <tr class="ext">  <td> DE count &mu;,&sigma; </td>    
+             <td> 35 &plusmn;27 </td>
+             <td> 35 &plusmn;32 </td>
+      </tr>
+      <tr class="ext">  <td>length-DE correl<sup>n</sup></td>   
+              <td> 0.89</td>  
+              <td> 0.90</td>  
+      </tr>
+   </table>
+ </td>
+  <td>
+
+  <table class="tdb_table">
+ 
+      <tr>  <th >cytoplasmic</th> <th >membrane</th> </tr>
+      
+      <tr>        
+        <td> 54296 </td>   <td> 5745 </td>
+      </tr>
+       <tr class="ext">    
+        <td> .. </td>    
+       </tr>
+      <tr class="ext">    
+        <td> 274 &plusmn;184 </td>    
+        <td> 335 &plusmn;219 </td>
+      </tr>
+      <tr class="ext">  
+        <td> 34 &plusmn;27 </td>
+        <td> 31 &plusmn;29 </td>
+      </tr>
+      <tr class="ext"> 
+        <td> 0.90</td>  
+        <td> 0.87</td>  
+      </tr>
+  
+   </table>
+ </td>
+<td style="vertical-align:bottom">
+
+<a  class="toggle" onclick="$('.ext').toggle();$('.toggle').toggle()">   &raquo; more   </a>
+<a  style="display:none" class="toggle" onclick="$('.ext').toggle();$('.toggle').toggle()">  &raquo; less   </a>
+</td>
+</tr>
+</table>
+<p>
 </div>
 
 <!-- Barcharts -->
@@ -56,15 +117,15 @@ ParseTargs is a training dataset for use in recombinant solubility prediction. <
 
 <script type="text/javascript">
 
-google.load("visualization", "1", {{packages:["corechart"]}});
+google.load("visualization", "1", {packages:["corechart"]});
  
-$(function(){{
+$(function(){
    
             initCharts();  
             $('#chartspace').show(); 
             $('#loading').hide();
             
-    }});
+    });
 
 </script>
 

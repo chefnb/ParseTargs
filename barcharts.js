@@ -66,7 +66,13 @@ function TDBchart(index,data){
                    chartArea: {top: 10, height:"90%"}, 
                    width: 700, 
                    height: 15*bars_tot +400,
-                   colors: ['#a88','#8aa']
+                   colors: ['#c42','#26c'],
+                backgroundColor:  '#aaa',
+            //     hAxis: {textStyle: {color: '#eee'} },
+             //    vAxis: {textStyle: {color: '#eee'} },
+             //    legendTextStyle: {color:'#eee'}
+
+
             })
  
         }
